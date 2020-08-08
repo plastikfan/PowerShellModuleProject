@@ -42,11 +42,6 @@ stages:
         resultsFile: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
         usePSCore: true
         run32Bit: False
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFormat: "NUnit"
-        testResultsFiles: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
-        failTaskOnFailedTests: true
 - stage: Deploy
   jobs:
   - job: Deploy
