@@ -38,10 +38,9 @@ stages:
     steps:
     - task: Pester@10
       inputs:
-        scriptFolder: "@{Path='$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.ps1'"
-        resultsFile: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
-        usePSCore: true
-        run32Bit: False
+        scriptFolder: '$(System.DefaultWorkingDirectory)\*'
+        resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
+        usePSCore: False
 - stage: Deploy
   jobs:
   - job: Deploy
